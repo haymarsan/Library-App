@@ -1,14 +1,22 @@
 package com.haymarsan.libraryapp.data
 
-import com.google.gson.annotations.SerializedName
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 
+@Entity(tableName = "book_table")
+data class BookVO(
 
-data class BookVO (
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
+    val id: Int,
 
- val bookName: String,
- val bookPrice: Double
+    @ColumnInfo(name = "book_name")
+    val bookName: String,
 
+    @ColumnInfo(name = "book_price")
+    val bookPrice: Double
 
 
 )
